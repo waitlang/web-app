@@ -1,0 +1,7 @@
+MOMENT MACROS
+
+add food
+api macros 
+auto add and track macro 
+separate breakfast lunch dinner
+stats

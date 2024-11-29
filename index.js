@@ -7,12 +7,20 @@ const app = express();
 const sqlite3 = require("sqlite3").verbose();
 const PORT = 5000
 
+const foodTitle = document.getElementById("typebox");
+const button = document.getElementById("button");
 // app.use(bodyParser.json());
 // app.use('/users', userRoutes);
 
 
 // Connect to a database (in this example, a new file-based database)
-const db = new sqlite3.Database('database.db');
+const db_name = path.join(__dirname, "data", "database.db");
+const db = new sqlite3.Database(db_name, err => {
+  if (err) {
+    return console.error(err.message);
+  }
+  console.log("Successful connection to the database 'database.db'");
+});
 
 // Define the SQL statement to create a table
 const createTableSql = `
